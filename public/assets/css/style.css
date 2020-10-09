@@ -47,6 +47,7 @@ border-bottom-left-radius: 0;
 
 .list-container {
 padding-left: 0;
+margin-top: 1rem;
 }
 
 .list-container .list-group,
