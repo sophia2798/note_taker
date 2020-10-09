@@ -27,18 +27,20 @@ module.exports = function(app) {
 
     // BEFORE DELETE ROUTE IS CREATED, CREATE GET ROUTE FOR ID PARAMETER SO NOTES CAN BE VIEWED BY ID
     app.get("/api/notes/:id", function(req,res) {
-        const currentID = req.params.id;
+        let currentID = req.params.id;
         let savedNotes = JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf8"));
         res.json(savedNotes[currentID]);
+        console.log(`You are viewing your note of ID ${currentID}`);
     });
 
     app.delete("/api/notes/:id", function(req,res) {
-        const currentID = req.params.id;
+        let currentID = req.params.id;
         let savedNotes = JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf8"));
         // FUNCTION TO REMOVE NOTE OF CURRENT ID
         for (var i=0;i<savedNotes.length;i++) {
             if (savedNotes[i].id === currentID.toString()) {
                 savedNotes.splice(i,1);
+                console.log(`Deleting note of ID ${i}`);
             }
         }
         fs.writeFileSync(path.join(__dirname,"../db/db.json"),JSON.stringify(savedNotes,null,2));
