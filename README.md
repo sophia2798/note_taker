@@ -23,6 +23,7 @@ No external software or servers are necessary to install this project except for
 This project can be accessed either via the GitHub Repository.
 
 - [GitHub Repository](https://github.com/sophia2798/note_taker)
+- [Deployed Page](https://sj-note-taker.herokuapp.com/)
 
 To open and edit code files, you will need a text editor. The one used to create this page was Visual Studio Code (https://code.visualstudio.com/).
 
