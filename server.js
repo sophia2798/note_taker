@@ -3,7 +3,7 @@ const express = require("express");
 
 // SET UP EXPRESS APP
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 app.use(express.static("public"))
 
 // SET UP EXPRESS APP TO HANDLE DATA PARSING
@@ -17,4 +17,4 @@ require("./routes/htmlRoutes")(app);
 // LISTENER
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
-})
+});
